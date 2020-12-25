@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD CAR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- FORM -->
+    <div class="container mt-5 display">
+        <div class="title">
+            <h2><b>INVENTORY INTERFACE</b></h2>
+        </div>
+        <div class="card-body">
+
+            <div class="left-form cards-syles">
+                <form id="form-car" onsubmit="event.preventDefault(),  addCar()" action="/car.php">
+                    <div class="mb-3">
+                        <h4 class="subtitle"><b>ADD CAR</b></h4>
+                        <label for="brand" class="form-label">Brand</label>
+                        <input type="text" class="form-control" id="brand" placeholder="Enter brand" required>
+                        <label for="model" class="form-label">Model</label>
+                        <input type="text" class="form-control" id="model" placeholder="Enter model" required>
+                        <label for="color" class="form-label">Color</label>
+                        <input type="text" class="form-control" id="color" placeholder="Enter color" required>
+                        <label for="year" class="form-label">Year</label>
+                        <input type="text" class="form-control" id="year" placeholder="Enter year" required>
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="price" placeholder="Enter price" required>
+                        <label for="img">Image URL</label>
+                        <input type="text" class="form-control" id="img" placeholder="Enter image URL" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <div class="right-form cards-syles">
+                <h4 class="subtitle"><b>UPDATE CAR</b></h4>
+                <div class="card-body">
+                    <form id="formUpdate" class="mt-1" onsubmit="event.preventDefault(), update()" action="/car.php">
+                        <div class="form-group">
+                            <input type="number" class="form-control mt-3" id="index"
+                                placeholder="Write the id of the car you want to edit">
+                            <input type="text" class="form-control mt-3" id="brandUpdate"
+                                placeholder="Write to edit Brand">
+                            <input type="text" class="form-control mt-3" id="ModelUpdate"
+                                placeholder="Write to edit Model">
+                            <input type="text" class="form-control mt-3" id="ColorUpdate"
+                                placeholder="Write to edit Color">
+                            <input type="number" class="form-control mt-3" id="YearUpdate"
+                                placeholder="Write to edit Year">
+                            <input type="number" class="form-control mt-3" id="PriceUpdate"
+                                placeholder="Write to edit Price">
+                            <input type="text" class="form-control mt-3" id="ImageUrlUpdate"
+                                placeholder="Write to edit Image URL">
+                            <button type="submit" class="btn btn-primary mt-3">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-5">
+        <h2 class="title"><b>CAR INVENTORY</b></h2>
+        <table class="table">
+            <thead class="thead">
+                <tr>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Color</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody id="container-cars">
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="./main.js"></script>
+</body>
+</html>
